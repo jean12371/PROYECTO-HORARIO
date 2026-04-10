@@ -14,10 +14,11 @@ Visión inicial del proyecto
 Organización documental
 Identificación preliminar de requerimientos
  Integrantes del Equipo y Roles
+ 
 Integrante	Rol
 Ramos Rua Alejandro	Product Owner - Scrum Master
-Quispe Breña Joan Branko	Responsable de Frontend
-Quispe Breña Jean Carlos	Responsable de Backend
+Quispe Breña Joan Branko - 	Responsable de Frontend
+Quispe Breña Jean Carlos	- Responsable de Backend
  Problemática Abordada
 
 Las universidades que implementan modelos de currículo flexible enfrentan múltiples desafíos en la planificación académica, tales como:
@@ -33,10 +34,6 @@ Uso ineficiente de aulas
 Dificultades en la asignación docente
 Limitaciones para que los estudiantes organicen su carga académica
 
- Para mayor detalle, revisar:
-
-docs/inicio/PROBLEMA.md
-docs/Documento inicial del problema.docx
 Objetivo del Proyecto
 
 Desarrollar una propuesta de solución para la generación óptima de horarios académicos, considerando:
