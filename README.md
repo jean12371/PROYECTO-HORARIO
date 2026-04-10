@@ -67,14 +67,19 @@ Flexibilidad curricular
 
 Frontend
 - react
+
 Backend
 - supabase
+
 Base de Datos
 - PostgreSQL
+
 Pruebas
 - Postman
+
 Diseño
 - Figma
+
 Versionado
 - GitHub
 
