@@ -9,6 +9,7 @@ Sistema de Generación Óptima de Horarios Académicos en Entornos de Currículo
 - [📌 Integrantes](#-Integrantes)
 - [📌 Problemática](#-Problemática)
 - [📌 Objetivos](#-Objetivos)
+- [🛠 Tecnologías](#-tecnologías)
 - [📌 Sprint](#-Sprint)
 
 ---
@@ -62,6 +63,22 @@ Flexibilidad curricular
 
 ---
 
+## 🛠 Tecnologías
+
+Frontend
+- react
+Backend
+- supabase
+Base de Datos
+- PostgreSQL
+Pruebas
+- Postman
+Diseño
+- Figma
+Versionado
+- GitHub
+
+---
 ## 📌 Sprint
 
 Objetivo del Sprint 0: En esta etapa inicial, el objetivo no es implementar el sistema, sino:
