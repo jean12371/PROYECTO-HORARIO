@@ -65,23 +65,12 @@ Flexibilidad curricular
 
 ## 🛠 Tecnologías
 
-Frontend
-- react
-
-Backend
-- supabase
-
-Base de Datos
-- PostgreSQL
-
-Pruebas
-- Postman
-
-Diseño
-- Figma
-
-Versionado
-- GitHub
+Frontend: react
+Backend: nodejs
+Base de Datos: PostgreSQL
+Pruebas: Postman
+Diseño: Figma
+Versionado: GitHub
 
 ---
 ## 📌 Sprint
