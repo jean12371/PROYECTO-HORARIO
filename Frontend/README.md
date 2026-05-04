@@ -21,5 +21,7 @@ View your app in AI Studio: https://ai.studio/apps/954fe2cf-116c-4c34-8620-65ec7
 
 ## Ingreso al sistema
 Credenciales iniciales:
-Usuario: admin@academia.sync
-Contraseña: admin123
+  Usuario: admin@academia.sync
+  Contraseña: admin123
+## Video de demostración
+  link: https://drive.google.com/drive/folders/19EEgqakenTm3L_iFnC6RTcG64GocRoV_?usp=sharing-
