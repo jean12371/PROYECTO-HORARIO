@@ -82,3 +82,6 @@ Objetivo del Sprint 0: En esta etapa inicial, el objetivo no es implementar el s
 - Establecer roles y responsabilidades
 - Organizar el repositorio
 - Preparar el entorno para el desarrollo iterativo
+
+## Video de demostración
+  link: https://drive.google.com/drive/folders/19EEgqakenTm3L_iFnC6RTcG64GocRoV_?usp=sharing-
