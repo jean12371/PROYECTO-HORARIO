@@ -1,5 +1,5 @@
 import { Router } from 'express';
-import { getHorarioCompleto, createHorarioClase } from '../controllers/horarioController.js';
+import { getHorarioCompleto, createHorarioClase, generarHorarioAutomatico } from '../controllers/horarioController.js';
 import { verificarToken, permitirRoles } from '../middlewares/authMiddleware.js';
 
 const router = Router();
@@ -10,4 +10,14 @@ router.get('/vista-completa', verificarToken, getHorarioCompleto);
 // 2. SOLO el rol 'Administrador' puede crear o alterar la asignación de horarios clase
 router.post('/', verificarToken, permitirRoles('Administrador'), createHorarioClase);
 
+// 3. Ruta crítica para el algoritmo inteligente
+router.post('/generar', verificarToken, permitirRoles('Administrador'), generarHorarioAutomatico);
+
 export default router;
+
+
+
+
+
+
+
