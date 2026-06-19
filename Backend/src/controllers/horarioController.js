@@ -104,3 +104,19 @@ export const generarHorarioAutomatico = async (req, res) => {
     client.release();
   }
 };
+
+// INSCRIPCIONES
+export const getInscripciones = async (req, res) => {
+  try {
+    const result = await pool.query('SELECT i.*, u.nombre, u.apellido FROM inscripciones i JOIN usuarios u ON i.id_usuario = u.id_usuario');
+    res.json(result.rows);
+  } catch (error) { res.status(500).json({ error: error.message }); }
+};
+
+export const inscribirEstudiante = async (req, res) => {
+  const { id_usuario, id_grupo } = req.body;
+  try {
+    const result = await pool.query('INSERT INTO inscripciones (id_usuario, id_grupo) VALUES ($1, $2) RETURNING *', [id_usuario, id_grupo]);
+    res.status(201).json(result.rows[0]);
+  } catch (error) { res.status(400).json({ error: error.message }); }
+};

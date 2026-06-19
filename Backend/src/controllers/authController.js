@@ -51,10 +51,10 @@ export const login = async (req, res) => {
 
     // Generar el Token incluyendo el ID, Email y el NOMBRE DEL ROL
     const token = jwt.sign(
-      { 
-        id_usuario: usuario.id_usuario, 
-        email: usuario.email, 
-        rol: usuario.nombre_rol 
+      {
+        id_usuario: usuario.id_usuario,
+        email: usuario.email,
+        rol: usuario.nombre_rol
       },
       process.env.JWT_SECRET,
       { expiresIn: '8h' } // El token expira en 8 horas
@@ -74,3 +74,57 @@ export const login = async (req, res) => {
     res.status(500).json({ error: error.message });
   }
 };
+
+export const getRoles = async (req, res) => {
+  try {
+    const result = await pool.query('SELECT * FROM roles ORDER BY id_rol');
+    res.json(result.rows);
+  } catch (error) { res.status(500).json({ error: error.message }); }
+};
+
+export const createRol = async (req, res) => {
+  const { nombre_rol } = req.body;
+  try {
+    const result = await pool.query('INSERT INTO roles (nombre_rol) VALUES ($1) RETURNING *', [nombre_rol]);
+    res.status(201).json(result.rows[0]);
+  } catch (error) { res.status(400).json({ error: error.message }); }
+};
+
+export const getUsuarios = async (req, res) => {
+  try {
+    const result = await pool.query('SELECT id_usuario, id_rol, nombre, apellido, email, activo FROM usuarios');
+    res.json(result.rows);
+  } catch (error) { res.status(500).json({ error: error.message }); }
+};
+
+// export const registrarUsuario = async (req, res) => {
+//   const { id_rol, nombre, apellido, email, password } = req.body;
+//   try {
+//     const salt = await bcrypt.genSalt(10);
+//     const passwordHash = await bcrypt.hash(password, salt);
+//     const result = await pool.query(
+//       `INSERT INTO usuarios (id_rol, nombre, apellido, email, password_hash) 
+//        VALUES ($1, $2, $3, $4, $5) RETURNING id_usuario, nombre, email, id_rol`,
+//       [id_rol, nombre, apellido, email, passwordHash]
+//     );
+//     res.status(201).json(result.rows[0]);
+//   } catch (error) { res.status(400).json({ error: error.message }); }
+// };
+
+// export const login = async (req, res) => {
+//   const { email, password } = req.body;
+//   try {
+//     const result = await pool.query(
+//       'SELECT u.*, r.nombre_rol FROM usuarios u JOIN roles r ON u.id_rol = r.id_rol WHERE u.email = $1 AND u.activo = TRUE',
+//       [email]
+//     );
+//     if (result.rows.length === 0) return res.status(401).json({ error: 'Usuario no encontrado o inactivo.' });
+
+//     const usuario = result.rows[0];
+//     const validPassword = await bcrypt.compare(password, usuario.password_hash);
+//     if (!validPassword) return res.status(401).json({ error: 'Contraseña incorrecta.' });
+
+//     const token = jwt.sign({ id_usuario: usuario.id_usuario, email: usuario.email, rol: usuario.nombre_rol }, process.env.JWT_SECRET, { expiresIn: '8h' });
+//     res.json({ token, usuario: { nombre: usuario.nombre, rol: usuario.nombre_rol } });
+//   } catch (error) { res.status(500).json({ error: error.message }); }
+// };

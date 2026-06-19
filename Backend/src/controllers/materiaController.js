@@ -44,6 +44,7 @@ export const createMateria = async (req, res) => {
       'INSERT INTO materias (codigo_materia, nombre_materia, creditos, descripcion) VALUES ($1, $2, $3, $4) RETURNING *',
       [codigo_materia, nombre_materia, creditos, descripcion]
     );
+    // console.log(result)
     res.status(201).json(result.rows[0]);
   } catch (error) {
     res.status(400).json({ error: error.message });

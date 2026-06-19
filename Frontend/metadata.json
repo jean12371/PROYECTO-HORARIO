@@ -1,6 +1,0 @@
-{
-  "name": "AcademiaSync: Optimizador de Horarios",
-  "description": "Sistema inteligente para la generación óptima de horarios académicos basado en modelos de satisfacción de restricciones (CSP) para currículos flexibles.",
-  "requestFramePermissions": [],
-  "majorCapabilities": []
-}

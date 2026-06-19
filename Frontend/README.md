@@ -1,27 +1,32 @@
-<div align="center">
-<img width="1200" height="475" alt="GHBanner" src="https://github.com/user-attachments/assets/0aa67016-6eaf-458a-adb2-6e31a0763ed6" />
-</div>
+# React + Vite
 
-# Run and deploy your AI Studio app
+This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
 
-This contains everything you need to run your app locally.
+Currently, two official plugins are available:
 
-View your app in AI Studio: https://ai.studio/apps/954fe2cf-116c-4c34-8620-65ec7190c613
+- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
+- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
 
-## Run Locally
+## React Compiler
 
-**Prerequisites:**  Node.js
+The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
 
+## Expanding the ESLint configuration
 
-1. Install dependencies:
-   `npm install`
-2. Set the `GEMINI_API_KEY` in [.env.local](.env.local) to your Gemini API key
-3. Run the app:
-   `npm run dev`
+If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
 
-## Ingreso al sistema
-Credenciales iniciales:
-  Usuario: admin@academia.sync
-  Contraseña: admin123
-## Video de demostración
-  link: https://drive.google.com/drive/folders/19EEgqakenTm3L_iFnC6RTcG64GocRoV_?usp=sharing-
+==================================================
+src/
+├── api/
+│   └── axios.js          # Configuración global de Axios e interceptor de JWT
+├── components/
+│   ├── Sidebar.jsx       # Navegación lateral principal
+│   └── CRUDGrid.jsx      # Componente reutilizable para tablas y acciones
+├── context/
+│   └── AuthContext.jsx   # Estado global de autenticación
+├── views/
+│   ├── Login.jsx         # Pantalla de acceso
+│   ├── Dashboard.jsx     # Panel de métricas iniciales
+│   └── ...views por tabla (Aulas.jsx, Materias.jsx, Grupos.jsx, etc.)
+├── App.jsx
+└── main.jsx
